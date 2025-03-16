@@ -12,6 +12,10 @@
         h1 {
             color: #0B3954;
         }
+
+        .green {
+            color: green;
+        }
     </style>
 </head>
 <body>
@@ -24,9 +28,41 @@
         <li>Nauczyć się JS</li>
         <li id="super-important">Zaimplementować</li>
     </ol>
+
+
+
+    <button type="button" id="removeButton">Usuń nudne rzeczy</button>
+    <p></p>
+    <p></p>
+
+    <input type="text" id="myTextField">
+    <input type="checkbox" id="myCheckbox">
+    <button type="button" onclick="readValues()">Odczytaj wartości</button>
+
+
+
 </div>
 <script>
-    alert('Witamy witamy');
+
+    function removeBoringStuff() {
+        document.querySelectorAll("#app .boring").forEach((e) => e.remove());
+    }
+
+    function readValues() {
+
+        const textValue = document.getElementById("myTextField").value;
+
+        const isChecked = document.getElementById("myCheckbox").checked;
+
+        if (isChecked) {
+            alert("Wartość z pola tekstowego: " + textValue);
+        } else {
+            alert("Musisz zaznaczyć checkbox, aby odczytać wartość.");
+        }
+    }
+</script>
+
+
 </script>
 </body>
 </html>
